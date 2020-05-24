@@ -14,7 +14,7 @@ class CoronaCoin {
     this.token = token
     this.userToken = userToken
 
-    this.apiUrl = 'https://corona-coin.ru/api/'
+    this.apiUrl = 'https://corona-coins.ru/api/'
     this.reconnectTimeout = reconnectTimeout
 
     if (pollingUrl) {
@@ -26,7 +26,7 @@ class CoronaCoin {
 
   getWsUrl(pollingUrl) {
     let query = pollingUrl.split('?')[1]
-    let wsLink = `wss://corona-coin.ru/api/?${query}`
+    let wsLink = `wss://corona-coins.ru/api/?${query}`
 
     return wsLink
   }
@@ -114,7 +114,7 @@ class CoronaCoin {
 
     ws.on('close', () => {
       return setTimeout(
-        this.startPolling,
+        () => this.startPolling(),
         this.reconnectTimeout
       )
     })

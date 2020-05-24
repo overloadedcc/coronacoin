@@ -1,6 +1,6 @@
 {
   "name": "coronacoin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CoronaCoin API wrapper",
   "main": "src/index",
   "scripts": {
